@@ -29,6 +29,16 @@ functions:
           path: todos
           method: post
           cors: true
+  listTodos:
+    handler: bin/handlers/listTodos
+    package:
+     include:
+       - ./bin/handlers/listTodos
+    events:
+      - http:
+          path: todos
+          method: get
+          cors: true
 custom:
   todosTableName: ${self:service}-${self:provider.stage}-todos
   todosTableArn: # ARNs are addresses of deployed services in AWS space
