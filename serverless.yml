@@ -39,14 +39,14 @@ functions:
           path: todos
           method: get
           cors: true
-  completeTodo:
-    handler: bin/handlers/completeTodo
+  updateTodo:
+    handler: bin/handlers/updateTodo
     package:
      include:
-       - ./bin/handlers/completeTodo
+       - ./bin/handlers/updateTodo
     events:
       - http:
-          path: todos
+          path: todos/{id}
           method: patch
           cors: true
 custom:

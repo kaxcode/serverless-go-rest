@@ -25,8 +25,8 @@ func init() {
 	}
 }
 
-func CompleteTodo(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	fmt.Println("CompleteTodo")
+func UpdateTodo(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+	fmt.Println("UpdateTodo")
 
 	// Parse id from request body
 	var (
@@ -70,5 +70,5 @@ func CompleteTodo(ctx context.Context, request events.APIGatewayProxyRequest) (e
 }
 
 func main() {
-	lambda.Start(CompleteTodo)
+	lambda.Start(UpdateTodo)
 }
